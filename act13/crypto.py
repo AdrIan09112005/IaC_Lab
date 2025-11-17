@@ -1,3 +1,5 @@
+# Importación Cipher, algorithms, modes, default_backend y urandom
+# From -> Para importar clases y funciones específicas de un módulo
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.backends import default_backend # Importar el backend por defecto
 from os import urandom
@@ -48,7 +50,8 @@ def desencriptar(texto_cifrado, key, iv):
 
     # Remover el padding
     padding_length = texto_desencriptado_con_padding[-1]  # Último byte indica la longitud del padding
-    texto_desencriptado = texto_desencriptado_con_padding[:-padding_length]  # Remover el padding - [:-padding_length] quita los bytes de padding del final
+    texto_desencriptado = texto_desencriptado_con_padding[:-padding_length]  # Remover el padding - [:-padding_length] quita los 
+                                                                             # bytes de padding del final
 
     return texto_desencriptado.decode('utf-8')  # Convertir bytes a string    
 
